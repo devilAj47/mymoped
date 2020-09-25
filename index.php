@@ -34,7 +34,7 @@
                         <div class="row col mt-4">
                             <!--                    <div class="mr-4 ml-4"><img src="images/logo.png" class="rounded-circle logo"></div>-->
                             <div class="text-yellow">
-                                <span class="h1">WorksEasy</span>
+                                <span class="h1">MyMopeds</span>
 
                             </div>
                             <div class="row mt-2 col justify-content-end">
