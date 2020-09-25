@@ -6,7 +6,7 @@
     margin-left: 0px;
 }
 
-.bg-reddish {
+.bg-yellow {
     background-color: #FFE473;
 }
 
@@ -30,13 +30,13 @@
 }
 
 
-.btn-reddish {
+.btn-yellow {
     background-color: #FFE473;
     color: #28292B;
     border: 1px solid #28292B;
 }
 
-.btn-reddish:hover {
+.btn-yellow:hover {
     background-color: #28292B;
     border: 1px solid #FFE473;
     color: #FFE473;
