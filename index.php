@@ -277,20 +277,36 @@
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
         <div class="bg-black  justify-content-around ">
-            <div class="text-white text-center h4">Top FAQs</div>
-            <div class="text-white text-center">Renting a Bike should be Easy, Like our FAQs</div>
+            <div class="text-white text-center h4 pt-4     ">Top FAQs</div>
+            <div class="text-white text-center pb-5">Renting a Bike should be Easy, Like our FAQs</div>
             <div class=" row justify-content-around ">
                 <div class="col-md-6 border pd-5">
                     <div class=" border">
                         <div class="text-white">How do I pay?</div>
-                        <div class="text-white">How do I pay?</div>
+                        <div class="text-white">You can pay online using Paytm or Google Pay only.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">Where can I pick up the bike from?</div>
+                        <div class="text-white">The bike/scooter could be pick up from Thapar's Parking.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">Will I get a complementry helmet for driving?</div>
+                        <div class="text-white">MyMopeds provides one helmet complementry with each booking. It must be returned while returning the scooty.</div>
                     </div>
 
                 </div>
                 <div class="col md-6 border pd-5">
                     <div class="border">
-                        <div class="text-white">How do I pay?</div>
-                        <div class="text-white">How do I pay?</div>
+                        <div class="text-white">Will I get compensation if I return scooty before time?</div>
+                        <div class="text-white">No, the amount will be charged on hourly basis.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">Where do I park the bike/scooter after use?</div>
+                        <div class="text-white">You must park the vehicle back in the Thapar's parking area.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">What documents do I need to show while booking?</div>
+                        <div class="text-white">You must show your college ID card and a valid driving license either while or before pick-up.</div>
                     </div>
                 </div>
 
