@@ -13,13 +13,13 @@
 
 
 
-<!--himani anmol-->
+
     <!--
     <script src="js/validations.js"></script>
     <script src="js/login-check.js"></script>
 -->
 
-    <title>WorksEasy</title>
+    <title>MyMopeds</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <div class="">
             <div class="">
                 <center>
-                    <div class="container-fluid bg-black header-height  row ">
+                    <div class="container-fluid bg-black header-height row ">
                         <div class="row col mt-4">
                             <!--                    <div class="mr-4 ml-4"><img src="images/logo.png" class="rounded-circle logo"></div>-->
                             <div class="text-yellow">
@@ -89,15 +89,15 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner min-height">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="images/vespa_1.jpg" alt="First slide">
+                        <img class="d-block w-100 min-height" src="images/vespa_1.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="images/vespa_1.jpg" alt="Second slide">
+                        <img class="d-block w-100 min-height" src="images/vespa_1.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="images/test_6.jpg" alt="Third slide">
+                        <img class="d-block w-100 min-height" src="images/test_6.jpg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -265,32 +265,63 @@
                 <div class="col-md-6 justify-content-around">
                     <center>
                         <div class="h2 mt-3 pb-2 text-center col-md-8 br-yellow text-yellow">Meet The Developer</div>
-                    
-                    <div class="mt-4 text-white col-md-9 text-left">I am currently pursuing B.Tech in Computers from Thapar University, Patiala. Builting this website is one of the best experience because it helped me to think about the aspects of the coding that are very usefull in a coder's daily routine.</div>
+
+                        <div class="mt-4 text-white col-md-9 text-left">I am currently pursuing B.Tech in Computers from Thapar University, Patiala. Builting this website is one of the best experience because it helped me to think about the aspects of the coding that are very usefull in a coder's daily routine.</div>
                     </center>
                 </div>
-                
+
             </div>
 
         </div>
 
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-        <div class="">
-            <div class=""></div>
-            <div class=""></div>
+        <div class="bg-black  justify-content-around ">
+            <div class="text-white text-center h4 pt-4     ">Top FAQs</div>
+            <div class="text-white text-center pb-5">Renting a Bike should be Easy, Like our FAQs</div>
+            <div class=" row justify-content-around ">
+                <div class="col-md-6 border pd-5">
+                    <div class=" border">
+                        <div class="text-white">How do I pay?</div>
+                        <div class="text-white">You can pay online using Paytm or Google Pay only.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">Where can I pick up the bike from?</div>
+                        <div class="text-white">The bike/scooter could be pick up from Thapar's Parking.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">Will I get a complementry helmet for driving?</div>
+                        <div class="text-white">MyMopeds provides one helmet complementry with each booking. It must be returned while returning the scooty.</div>
+                    </div>
+
+                </div>
+                <div class="col md-6 border pd-5">
+                    <div class="border">
+                        <div class="text-white">Will I get compensation if I return scooty before time?</div>
+                        <div class="text-white">No, the amount will be charged on hourly basis.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">Where do I park the bike/scooter after use?</div>
+                        <div class="text-white">You must park the vehicle back in the Thapar's parking area.</div>
+                    </div>
+                    <div class=" border">
+                        <div class="text-white">What documents do I need to show while booking?</div>
+                        <div class="text-white">You must show your college ID card and a valid driving license either while or before pick-up.</div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+           
+
+
+            <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+
         </div>
-
-
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-        <div></div>
-
-
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-
     </div>
-    <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-
 </body>
 
 </html>
@@ -305,6 +336,3 @@
 #28292B- Black
 
   -->
-
-
-

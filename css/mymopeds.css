@@ -1,7 +1,9 @@
 * {
     margin: 0px;
 }
-
+.min-height{
+    min-height: 300px;
+}
 .mleft-zero {
     margin-left: 0px;
 }
@@ -129,4 +131,14 @@
 .bg-wheat{
     background-color: #F5DFBB;
 }
+.pd-5{
+    padding: 5px;
+}
+.pd-10{
+    padding: 10px;
+}
+.pd-20{
+    padding: 20px;
+}
+
 
