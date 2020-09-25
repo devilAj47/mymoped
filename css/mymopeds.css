@@ -55,7 +55,7 @@
     border: 1px solid #28292B;
 }
 
-.br-reddish {
+.br-yellow {
     border: 1px solid #FFE473;
 }
 
@@ -71,7 +71,7 @@
     width: 50px;
 }
 
-.text-reddish {
+.text-yellow {
     color: #FFE473;
 }
 
@@ -111,7 +111,7 @@
 
 
 
-.form-text-red{
+.form-text-yellow{
         color: #FFE473 !important;
 }
 .form-bg-black{
