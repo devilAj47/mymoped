@@ -9,8 +9,8 @@
     <script src="js/jquery-1.8.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/mymopeds.css">
-    <link rel="stylesheet" href="css/Normal.css">
-    <script src="js/signup-workseasy.js"></script>
+    <!-- <link rel="stylesheet" href="css/Normal.css">
+    <script src="js/signup-workseasy.js"></script> -->
 
 
 
