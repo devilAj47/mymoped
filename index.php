@@ -33,7 +33,7 @@
                     <div class="container-fluid bg-black header-height  row ">
                         <div class="row col mt-4">
                             <!--                    <div class="mr-4 ml-4"><img src="images/logo.png" class="rounded-circle logo"></div>-->
-                            <div class="text-reddish">
+                            <div class="text-yellow">
                                 <span class="h1">WorksEasy</span>
 
                             </div>
@@ -53,7 +53,7 @@
 
                 <div>
                     <center>
-                        <nav class="navbar navbar-expand-lg navbar-light bg-reddish">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-yellow">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -116,8 +116,8 @@
 
 
 
-        <div class="container-sm bg-black pb-4 pt-4 col-md-4 mt-4  z-index_psv display_none br-reddish" id="signup_form">
-            <div class="bg-black br-reddish text-reddish text-center mb-4 p-2">
+        <div class="container-sm bg-black pb-4 pt-4 col-md-4 mt-4  z-index_psv display_none br-yellow" id="signup_form">
+            <div class="bg-black br-yellow text-yellow text-center mb-4 p-2">
                 <h2>SignUp</h2>
             </div>
             <form action="" method=get enctype="multipart/form-data">
@@ -126,9 +126,9 @@
 
                     <div class="form-group col-md-10">
 
-                        <label for="input_rno" class="text-reddish">
+                        <label for="input_rno" class="text-yellow">
                             UserName
-                            <div class="spinner-border text-reddish" id="rnocheck" role="status">
+                            <div class="spinner-border text-yellow" id="rnocheck" role="status">
                                 <span class="sr-only">Loading...</span>
                             </div>
                             <span id="checkrno" class="text-right text-white"></span></label>
@@ -138,7 +138,7 @@
 
                     </div>
                     <div class="form-group col-md-10">
-                        <label for="input_email" class="text-reddish text-left">Email
+                        <label for="input_email" class="text-yellow text-left">Email
                             <span id="validEmail" class="text-white"></span>
                         </label>
                         <input type="email" class="form-control btn-br-normal" name="input_email" id="input_email" placeholder="Email">
@@ -146,7 +146,7 @@
 
 
                     <div class="form-group col-md-10">
-                        <label for="input_pwd" class="text-reddish">Password
+                        <label for="input_pwd" class="text-yellow">Password
                             <div id="validPass" class="text-white"></div>
                         </label>
                         <input type="password" class="form-control btn-br-normal" name="input_pwd" id="input_pwd" placeholder="Password">
@@ -154,7 +154,7 @@
 
 
                     <div class="form-group col-md-10">
-                        <label for="input_mobile" class="text-reddish">Mobile Number
+                        <label for="input_mobile" class="text-yellow">Mobile Number
                             <div id="validmob" class="text-white"></div>
                         </label>
                         <input type="text" class="form-control btn-br-normal" name="input_mobile" id="input_mobile" placeholder="Mobile Number">
@@ -162,7 +162,7 @@
 
                     </div>
                     <div class="form-group col-md-10">
-                        <label for="input_category" class="text-reddish">Category
+                        <label for="input_category" class="text-yellow">Category
                             <div id="validCat" class="text-white"></div>
                         </label>
 
@@ -177,7 +177,7 @@
                     <div class="form-group ">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="input_chkTNC" required>
-                            <label class="form-check-label text-reddish" for="input_chkTNC">
+                            <label class="form-check-label text-yellow" for="input_chkTNC">
                                 Accept Our Terms and Conditions
                             </label>
                         </div>
@@ -194,8 +194,8 @@
 
 
 
-        <div class="container-sm br-reddish bg-black pb-4 pt-4 col-md-4 mt-4 display_none position-absolute z-index_psv  br-black" data-dismiss="modal" id="login_form">
-            <div class="bg-black br-reddish text-reddish text-center mb-4 p-2">
+        <div class="container-sm br-yellow bg-black pb-4 pt-4 col-md-4 mt-4 display_none position-absolute z-index_psv  br-black" data-dismiss="modal" id="login_form">
+            <div class="bg-black br-yellow text-yellow text-center mb-4 p-2">
                 <h2>Login</h2>
             </div>
             <form action="" method=get enctype="multipart/form-data">
@@ -203,14 +203,14 @@
                 <center>
 
                     <div class="form-group col-md-10">
-                        <label for="input_rno_lgn" class="text-reddish">User Name </label>
+                        <label for="input_rno_lgn" class="text-yellow">User Name </label>
                         <input type="text" class="form-control btn-br-normal" name="input_rno" id="input_rno_lgn" placeholder="UserName">
                     </div>
 
 
 
                     <div class="form-group col-md-10">
-                        <label for="input_pwd_lgn" class="text-reddish">Password</label>
+                        <label for="input_pwd_lgn" class="text-yellow">Password</label>
                         <input type="password" class="form-control btn-br-normal" name="input_pwd" id="input_pwd_lgn" placeholder="Password">
                     </div>
                     <span id="login_status" class="text-white mb-2 mt-2"> </span>
@@ -224,14 +224,14 @@
         </div>
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
         <div class="pt-4 bg-black justify-content-around pb-5">
-            <div class="mb-4 text-reddish  bg-black br-reddish text-center">
+            <div class="mb-4 text-yellow  bg-black br-yellow text-center">
                 <h1>Our Services</h1>
             </div>
 
             <div class="row justify-content-around ">
-                <div class="card mt-3 br-reddish text-black" style="width: 18rem;">
+                <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
                     <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
-                    <div class="card-body bg-reddish">
+                    <div class="card-body bg-yellow">
                         <h2>Find a Worker</h2>
                         <p class="card-text">
                             EasyWorker helps a citizen to counter the daily life problems like fixing taps or getting some electrical work done.
@@ -239,17 +239,17 @@
                     </div>
                 </div>
 
-                <div class="card mt-3 br-reddish text-black" style="width: 18rem; ">
+                <div class="card mt-3 br-yellow text-black" style="width: 18rem; ">
                     <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
-                    <div class="card-body bg-reddish">
+                    <div class="card-body bg-yellow">
                         <h2>Find Work</h2>
                         <p class="card-text">EasyWorker also sets platform for different class of workers like Electrician, Plumber, Carpenter and what not to find work in many cities.</p>
                     </div>
                 </div>
 
-                <div class="card mt-3 br-reddish text-black" style="width: 18rem;">
+                <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
                     <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
-                    <div class="card-body bg-reddish">
+                    <div class="card-body bg-yellow">
                         <h2>Post Work</h2>
                         <p class="card-text">EasyWorker helps citizens to post their work so that a specfic class of workers could get notified and helps the problem to be solved in minimum time possible. </p>
                     </div>
@@ -265,7 +265,7 @@
                 </div>
                 <div class="col-md-6 justify-content-around">
                     <center>
-                        <div class="h2 mt-3 pb-2 text-center col-md-8 br-reddish text-reddish">Meet The Developer</div>
+                        <div class="h2 mt-3 pb-2 text-center col-md-8 br-yellow text-yellow">Meet The Developer</div>
                     
                     <div class="mt-4 text-white col-md-9 text-left">I am currently pursuing B.Tech in Computers from Thapar University, Patiala. Builting this website is one of the best experience because it helped me to think about the aspects of the coding that are very usefull in a coder's daily routine.</div>
                     </center>
@@ -302,7 +302,10 @@
 
 <!--
 
-#1D2731- Ivory Black
-#E23E42-Papaya
+#FFE473- Yellow
+#28292B- Black
 
   -->
+
+
+
