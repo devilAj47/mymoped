@@ -330,7 +330,7 @@
             <div class="text-white"><marquee behavior="" direction="right">Please Remain calm</marquee></div>
             
         </div>
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*Signup*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
     </div>
 </body>
 
