@@ -30,13 +30,13 @@
             <div class="">
                 <center>
                     <div class="container-fluid bg-black header-height row ">
-                        <div class="row col mt-4">
+                        <div class="row col mt-4 justify-content-around">
                             <!--                    <div class="mr-4 ml-4"><img src="images/logo.png" class="rounded-circle logo"></div>-->
-                            <div class="text-yellow">
+                            <div class="text-yellow col-md-4">
                                 <span class="h1">MyMopeds</span>
 
                             </div>
-                            <div class="row mt-2 col justify-content-end">
+                            <div class=" mt-2 col justify-content-end col-md-4">
 
                                 <div class="mr-4 ml-4">
                                     <button type="button" class="btn btn-br-normal btn-black">8264245458</button>
@@ -314,11 +314,16 @@
 
 
             <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-           
+
 
 
             <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
+        </div>
+        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+        <div class="bg-black">
+            <div class="text-white"><marquee behavior="" direction="right">Please Remain calm</marquee></div>
+            
         </div>
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
     </div>
