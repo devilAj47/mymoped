@@ -222,9 +222,31 @@
 
         </div>
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-        <div class="pt-4 bg-black justify-content-around pb-5">
+        
+        <div class="bg-black">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/test_6.jpg" width="100%" alt="">
+                </div>
+                <div class="col-md-6 justify-content-around">
+                    <center>
+                        <div class="h2 mt-3 pb-2 text-center col-md-8 br-yellow text-yellow">Our Services</div>
+
+                        <div class="mt-4 text-white col-md-9 text-left">I am currently pursuing B.Tech in Computers from Thapar University, Patiala. Builting this website is one of the best experience because it helped me to think about the aspects of the coding that are very usefull in a coder's daily routine.</div>
+                    </center>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+       
+           <div class="pt-4 bg-black justify-content-around pb-5">
             <div class="mb-4 text-yellow  bg-black br-yellow text-center">
-                <h1>Our Services</h1>
+                <h1>Meet the Developers</h1>
             </div>
 
             <div class="row justify-content-around ">
@@ -255,25 +277,8 @@
                 </div>
             </div>
         </div>
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-        <div class="bg-black">
-
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="images/test_6.jpg" width="100%" alt="">
-                </div>
-                <div class="col-md-6 justify-content-around">
-                    <center>
-                        <div class="h2 mt-3 pb-2 text-center col-md-8 br-yellow text-yellow">Meet The Developer</div>
-
-                        <div class="mt-4 text-white col-md-9 text-left">I am currently pursuing B.Tech in Computers from Thapar University, Patiala. Builting this website is one of the best experience because it helped me to think about the aspects of the coding that are very usefull in a coder's daily routine.</div>
-                    </center>
-                </div>
-
-            </div>
-
-        </div>
-
+            
+              
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
         <div class="bg-black  justify-content-around ">
