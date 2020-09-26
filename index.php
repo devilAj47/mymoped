@@ -75,8 +75,9 @@
                                 </ul>
                                 <form class="form-inline my-2 my-lg-0">
 
-                                    <div class="btn btn-black my-2 my-sm-0 mr-4" id="SignUp">SignUp</div>
-                                    <div class="btn btn-black my-2 my-sm-0 mr-4" id="login">LogIn</div>
+                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button"  data-toggle="modal" data-target="#Signup">SignUp</button>
+                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button"  data-toggle="modal" data-target="#Login">Login</button>
+                                    
                                 </form>
                             </div>
                         </nav>
@@ -115,12 +116,13 @@
 
 
 
-        <div class="container-sm bg-black pb-4 pt-4 col-md-4 mt-4  z-index_psv display_none br-yellow" id="signup_form">
+
+<!--
+        <div class="modal container-sm bg-black pb-4 pt-4 col-md-4 mt-4  z-index_psv display_none br-yellow " id="SignUp">
             <div class="bg-black br-yellow text-yellow text-center mb-4 p-2">
                 <h2>SignUp</h2>
             </div>
             <form action="" method=get enctype="multipart/form-data">
-
                 <center>
 
                     <div class="form-group col-md-10">
@@ -189,10 +191,123 @@
             </form>
 
         </div>
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+-->
+        <!--/*/*/*/*/*/*/*/*/*signup/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+<div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="Signup">
+  <div class="modal-dialog">
+    <div class="modal-content bg-black br-yellow">
+      <div class="modal-header bg-black text-yellow mb-4 p-2">
+        <h5 class="modal-title">SignUp</h5>
+        <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                   <form>
+                 <center>
+                 <div class="form-group col-md-10">
+
+                        <label for="txtName" class="text-yellow">
+                            UserName
+                            <div class="spinner-border text-yellow" id="namecheck" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <span id="checkrno" class="text-right text-white"></span></label>
+
+                        <input type="text" class="form-control btn-br-normal" name="txtame" id="txtName" placeholder="UserName">
 
 
+                    </div>
+                    
+                    <div class="form-group col-md-10">
+							<label for="txtPwd" class="text-yellow">Password
+							<small id="errPwd" class="text-white"></small></label>
+							<input type="password" class="form-control btn-br-normal" id="txtPwd" name="txtPwd" placeholder="Password">
+							
+					
+						</div>
+						
+						<div class="form-group  col-md-10">
+							<label for="txt" class="text-yellow">Email address
+							
+                             <small id="emailHelp" class="text-white"></small>
+                        </label>
+							<input type="email" class="form-control btn-br-normal" id="txtUid" placeholder="Email"name="txtUid">
+							
+						</div>
+						
+						<div class="form-group col-md-10">
+							<label for="txtRno" class="text-yellow ">Roll Number
+							<small id="errRno" class="text-white"></small></label>
+							<input type="text" class="form-control btn-br-normal" id="txtRno" name="txtRno" placeholder="Roll number">
+							
+						</div>
+						
+						<div class="form-group col-md-10">
+							<label for="txtMob" class="text-yellow ">Mobile Number
+							<small id="errMob" class="text-white"></small></label>
+							<input type="text" class="form-control btn-br-normal" id="txtMob" name="txtMob" placeholder="Mobile Number">
+							
+						</div>
 
+                    <div class="form-group ">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="input_chkTNC" required>
+                            <label class="form-check-label text-yellow" for="input_chkTNC">
+                                Accept Our Terms and Conditions
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row justify-content-around">
+                        <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="process_btn" id="process_btn" type="button" value='signup'>Sign In</div>
+                     </div>
+						</center>
+					</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------**************Login**************--------->
+
+<div class="modal pb-4 pt-4 mt-4 " tabindex="-1" role="dialog" id="Login">
+  <div class="modal-dialog">
+    <div class="modal-content bg-black br-yellow">
+      <div class="modal-header bg-black text-yellow mb-4 p-2">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                   <form>
+                 <center>
+                 <div class="form-group col-md-10">
+							<label for="txtLoginRno" class="text-yellow ">Roll Number
+							<small id="errLoginRno" class="text-white"></small></label>
+							<input type="text" class="form-control btn-br-normal" id="txtLoginRno" name="txtLoginRno" placeholder="Roll number">
+							
+						</div>
+                   
+                    <div class="form-group col-md-10">
+							<label for="txtLoginPwd" class="text-yellow">Password
+							<small id="errLoginPwd" class="text-white"></small></label>
+							<input type="password" class="form-control btn-br-normal" id="txtLoginPwd" name="txtLoginPwd" placeholder="Password">
+						</div>
+                   
+                    <div class="form-row justify-content-around">
+                        <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="Login_btn" id="Login_btn" type="button" value='login'>Login</div>
+                     </div>
+						</center>
+					</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---------------------------------------->
         <div class="container-sm br-yellow bg-black pb-4 pt-4 col-md-4 mt-4 display_none position-absolute z-index_psv  br-black" data-dismiss="modal" id="login_form">
             <div class="bg-black br-yellow text-yellow text-center mb-4 p-2">
                 <h2>Login</h2>
@@ -330,7 +445,9 @@
             <div class="text-white"><marquee behavior="" direction="right">Please Remain calm</marquee></div>
             
         </div>
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*Signup*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+        
+        
     </div>
 </body>
 
