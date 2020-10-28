@@ -18,7 +18,37 @@
     <script src="js/validations.js"></script>
     <script src="js/login-check.js"></script>
 -->
+    <script>
+    $(document).ready(function () {
 
+
+    $("#singup_btn").click(function () {
+
+        var uid = $("#txtRno").val();
+        var ueid = $("#txtUid").val();
+        var upwd = $("#txtPwd").val();
+        var umob = $("#txtMob").val();
+        var uname = $("#txtName").val();
+        
+
+        var actionUrl = "signup.php?uid=" + uid + "&ueid=" + ueid + "&upwd=" + upwd + "&umob=" + umob + "&uname=" + uname;
+
+
+
+        $.get(actionUrl, function (response) {
+            if(response=="")
+                {
+                    $("#Signup").toggle();
+                }
+            
+        })
+
+    })
+})
+
+    </script>
+   
+   
     <title>MyMopeds</title>
 </head>
 
@@ -214,7 +244,7 @@
                             </div>
                             <span id="checkrno" class="text-right text-white"></span></label>
 
-                        <input type="text" class="form-control btn-br-normal" name="txtame" id="txtName" placeholder="Full Name">
+                        <input type="text" class="form-control btn-br-normal" name="txtName" id="txtName" placeholder="Full Name">
 
 
                     </div>
