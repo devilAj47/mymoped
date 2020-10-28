@@ -20,6 +20,24 @@
 -->
 
     <title>MyMopeds</title>
+    
+<!--    ---------------login script----------------->
+    <script>
+    $(document).ready(function(){
+         $("#Login_btn").click(function(){
+//                    alert("hello");
+                    var rno=$("#txtLoginRno").val();
+                    alert(rno);
+                    var pwd=$("#txtLoginPwd").val();
+                   alert(pwd);
+                    $.get("ajax-login-process.php?rno="+rno+"&pwd="+pwd,function(solution){
+                        $("#reaction").html(solution);
+                        
+                    });
+                });
+    
+    });
+    </script>
 </head>
 
 <body>
@@ -295,7 +313,9 @@
 							<small id="errLoginPwd" class="text-white"></small></label>
 							<input type="password" class="form-control btn-br-normal" id="txtLoginPwd" name="txtLoginPwd" placeholder="Password">
 						</div>
-                   
+                     
+                   <center><span id="reaction" class="text-white" ></span></center>
+                     
                     <div class="form-row justify-content-around">
                         <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="Login_btn" id="Login_btn" type="button" value='login'>Login</div>
                      </div>
