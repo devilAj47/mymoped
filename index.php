@@ -29,7 +29,7 @@
         <div class="">
             <div class="">
                 <center>
-                    <div class="container-fluid bg-black header-height row ">
+                    <div class="container-fluid bg-black header-height row " id="home">
                         <div class="row col mt-4 justify-content-around">
                             <!--                    <div class="mr-4 ml-4"><img src="images/logo.png" class="rounded-circle logo"></div>-->
                             <div class="text-yellow col-md-4">
@@ -61,16 +61,16 @@
                             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-left">
                                     <li class="nav-item ">
-                                        <a class="nav-link h6" href="#">Home<span class="sr-only">(current)</span></a>
+                                        <a class="nav-link h6" href="#home">Home<span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link h6" href="#">About</a>
+                                        <a class="nav-link h6" href="#about">About</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link h6" href="#">Contact</a>
+                                        <a class="nav-link h6" href="#contactUs">Contact</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link h6" href="#">FAQs</a>
+                                        <a class="nav-link h6" href="#faqs">FAQs</a>
                                     </li>
                                 </ul>
                                 <form class="form-inline my-2 my-lg-0">
@@ -208,13 +208,13 @@
                  <div class="form-group col-md-10">
 
                         <label for="txtName" class="text-yellow">
-                            UserName
+                            Full Name
                             <div class="spinner-border text-yellow" id="namecheck" role="status">
                                 <span class="sr-only">Loading...</span>
                             </div>
                             <span id="checkrno" class="text-right text-white"></span></label>
 
-                        <input type="text" class="form-control btn-br-normal" name="txtame" id="txtName" placeholder="UserName">
+                        <input type="text" class="form-control btn-br-normal" name="txtame" id="txtName" placeholder="Full Name">
 
 
                     </div>
@@ -260,7 +260,7 @@
                     </div>
                     
                     <div class="form-row justify-content-around">
-                        <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="process_btn" id="process_btn" type="button" value='signup'>Sign In</div>
+                        <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="signup_btn" id="singup_btn" type="button" value='signup'>Sign Up</div>
                      </div>
 						</center>
 					</form>
@@ -338,7 +338,7 @@
         </div>
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
         
-        <div class="bg-black">
+        <div class="bg-black" id="about">
 
             <div class="row">
                 <div class="col-md-6">
@@ -359,7 +359,7 @@
         
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
        
-           <div class="pt-4 bg-black justify-content-around pb-5">
+           <div class="pt-4 bg-black justify-content-around pb-5" id="contactUs">
             <div class="mb-4 text-yellow  bg-black br-yellow text-center">
                 <h1>Meet the Developers</h1>
             </div>
@@ -396,7 +396,7 @@
               
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-        <div class="bg-black  justify-content-around ">
+        <div class="bg-black  justify-content-around " id="faqs">
             <div class="text-white text-center h4 pt-4     ">Top FAQs</div>
             <div class="text-white text-center pb-5">Renting a Bike should be Easy, Like our FAQs</div>
             <div class="row justify-content-around col-md-12">
