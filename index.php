@@ -26,42 +26,46 @@
                 var upwd = $("#txtPwd").val();
                 var umob = $("#txtMob").val();
                 var uname = $("#txtName").val();
-                
+
                 var actionUrl = "signup.php?uid=" + uid + "&ueid=" + ueid + "&upwd=" + upwd + "&umob=" + umob + "&uname=" + uname;
 
                 $.get(actionUrl, function(response) {
                     if (response == "") {
-                        $("#Signup").toggle();
+                        $('#Signup').modal('toggle');
+                        $('#successSignup').modal('toggle');
                     }
                 })
             })
-             $("#Login_btn").click(function(){
-//                  
-                    var rno=$("#txtLoginRno").val();
-                 
-                    var pwd=$("#txtLoginPwd").val();
-                
-                   var actionUrl="login.php?rno="+rno+"&pwd="+pwd;
+            $("#Login_btn").click(function() {
+
+                //                  
+                var rno = $("#txtLoginRno").val();
+
+                var pwd = $("#txtLoginPwd").val();
+
+                var actionUrl = "login.php?rno=" + rno + "&pwd=" + pwd;
+
+                $.get(actionUrl, function(output) {
+                    if (output == "") {
+                        $("#Login").modal('toggle');
                         
-                        $.get(actionUrl, function (output) {
-            if(output=="")
-                {
-                    $("#Login").toggle();
-                }
-            
-                    })
+//                        
+                    }
+
                 })
+            })
         })
+
     </script>
 
 
 
     <title>MyMopeds</title>
-    
-<!--    ---------------login script----------------->
-    
-   
-  
+
+    <!--    ---------------login script----------------->
+
+
+
 </head>
 
 <body>
@@ -155,8 +159,28 @@
         </div>
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+<!--             MODALS            -->
+       <!--Successfull Signup Modal -->
 
+        <div class="modal" tabindex="-1" role="dialog" id="successSignup">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content bg-black br-yellow">
+                    <div class="modal-header bg-black text-yellow pl-4 mb-4 p-2">
+                        <h5 class="modal-title">You have Signed Up Successfully!</h5>
+                        <button type="button" class="close text-yellow" data-dismiss="modal" style="color:yellow;" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-yellow">Please Login to Continue!</p>
+                    </div>
+                    <div class="modal-footer">
 
+                        <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -274,99 +298,175 @@
             </div>
         </div>
 
-                    
-           
-						
-					
-      </div>
 
 
-<!------------**************Login**************--------->
 
-<div class="modal pb-4 pt-4 mt-4 " tabindex="-1" role="dialog" id="Login">
-  <div class="modal-dialog">
-    <div class="modal-content bg-black br-yellow">
-      <div class="modal-header bg-black text-yellow mb-4 p-2">
-        <h5 class="modal-title">Login</h5>
-        <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-                   <form>
-                 <center>
-                 <div class="form-group col-md-10">
-							<label for="txtLoginRno" class="text-yellow ">Roll Number
-							<small id="errLoginRno" class="text-white"></small></label>
-							<input type="text" class="form-control btn-br-normal" id="txtLoginRno" name="txtLoginRno" placeholder="Roll number">
-							
-						</div>
-                   
-                    <div class="form-group col-md-10">
-							<label for="txtLoginPwd" class="text-yellow">Password
-							<small id="errLoginPwd" class="text-white"></small></label>
-							<input type="password" class="form-control btn-br-normal" id="txtLoginPwd" name="txtLoginPwd" placeholder="Password">
-						</div>
-                     
-                   <center><span id="reaction" class="text-white" ></span></center>
-                     
-                    <div class="form-row justify-content-around">
-                        <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="Login_btn" id="Login_btn" type="button" value='login'>Login</div>
-                     </div>
-						</center>
-					</form>
-      </div>
+
     </div>
-  </div>
-</div>
 
 
+    <!------------**************Login**************--------->
 
-        <!---------------------------------------->
-        <div class="container-sm br-yellow bg-black pb-4 pt-4 col-md-4 mt-4 display_none position-absolute z-index_psv  br-black" data-dismiss="modal" id="login_form">
-            <div class="bg-black br-yellow text-yellow text-center mb-4 p-2">
-                <h2>Login</h2>
+    <div class="modal pb-4 pt-4 mt-4 " tabindex="-1" role="dialog" id="Login">
+        <div class="modal-dialog">
+            <div class="modal-content bg-black br-yellow">
+                <div class="modal-header bg-black text-yellow mb-4 p-2">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <center>
+                            <div class="form-group col-md-10">
+                                <label for="txtLoginRno" class="text-yellow ">Roll Number
+                                    <small id="errLoginRno" class="text-white"></small></label>
+                                <input type="text" class="form-control btn-br-normal" id="txtLoginRno" name="txtLoginRno" placeholder="Roll number">
+
+                            </div>
+
+                            <div class="form-group col-md-10">
+                                <label for="txtLoginPwd" class="text-yellow">Password
+                                    <small id="errLoginPwd" class="text-white"></small></label>
+                                <input type="password" class="form-control btn-br-normal" id="txtLoginPwd" name="txtLoginPwd" placeholder="Password">
+                            </div>
+
+                            <center><span id="reaction" class="text-white"></span></center>
+
+                            <div class="form-row justify-content-around">
+                                <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="Login_btn" id="Login_btn" type="button" value='login'>Login</div>
+                            </div>
+                        </center>
+                    </form>
+                </div>
             </div>
-            <form action="" method=get enctype="multipart/form-data">
+        </div>
+    </div>
 
+
+
+    <!---------------------------------------->
+    <div class="container-sm br-yellow bg-black pb-4 pt-4 col-md-4 mt-4 display_none position-absolute z-index_psv  br-black" data-dismiss="modal" id="login_form">
+        <div class="bg-black br-yellow text-yellow text-center mb-4 p-2">
+            <h2>Login</h2>
+        </div>
+        <form action="" method=get enctype="multipart/form-data">
+
+            <center>
+
+                <div class="form-group col-md-10">
+                    <label for="input_rno_lgn" class="text-yellow">User Name </label>
+                    <input type="text" class="form-control btn-br-normal" name="input_rno" id="input_rno_lgn" placeholder="UserName">
+                </div>
+
+
+
+                <div class="form-group col-md-10">
+                    <label for="input_pwd_lgn" class="text-yellow">Password</label>
+                    <input type="password" class="form-control btn-br-normal" name="input_pwd" id="input_pwd_lgn" placeholder="Password">
+                </div>
+                <span id="login_status" class="text-white mb-2 mt-2"> </span>
+                <div class="form-row justify-content-around">
+                    <button class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="login_process" id="login_process" type="button" value='login_process'>Login</button>
+                </div>
+
+            </center>
+        </form>
+
+    </div>
+    <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+
+    <div class="bg-black" id="about">
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="images/test_6.jpg" width="100%" alt="">
+            </div>
+            <div class="col-md-6 justify-content-around">
                 <center>
+                    <div class="h2 mt-3 pb-2 text-center col-md-8 br-yellow text-yellow">Our Services</div>
 
-                    <div class="form-group col-md-10">
-                        <label for="input_rno_lgn" class="text-yellow">User Name </label>
-                        <input type="text" class="form-control btn-br-normal" name="input_rno" id="input_rno_lgn" placeholder="UserName">
-                    </div>
-
-
-
-                    <div class="form-group col-md-10">
-                        <label for="input_pwd_lgn" class="text-yellow">Password</label>
-                        <input type="password" class="form-control btn-br-normal" name="input_pwd" id="input_pwd_lgn" placeholder="Password">
-                    </div>
-                    <span id="login_status" class="text-white mb-2 mt-2"> </span>
-                    <div class="form-row justify-content-around">
-                        <button class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="login_process" id="login_process" type="button" value='login_process'>Login</button>
-                    </div>
-
+                    <div class="mt-4 text-white col-md-9 text-left">We help the students to provide with the rented vehicles for easy access to the Patiala City at low cost and easy to book services. MyMopeds also provides a complementry helmet for safety purposes!</div>
                 </center>
-            </form>
+            </div>
 
         </div>
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
-        <div class="bg-black" id="about">
+    </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="images/test_6.jpg" width="100%" alt="">
+
+    <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+
+    <div class="pt-4 bg-black justify-content-around pb-5" id="contactUs">
+        <div class="mb-4 text-yellow  bg-black br-yellow text-center">
+            <h1>Meet the Developers</h1>
+        </div>
+
+        <div class="row justify-content-around ">
+            <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
+                <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
+                <div class="card-body bg-yellow">
+                    <h2>Anmol Jindal</h2>
+                    <p class="card-text">
+                        Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city!
+                    </p>
                 </div>
-                <div class="col-md-6 justify-content-around">
-                    <center>
-                        <div class="h2 mt-3 pb-2 text-center col-md-8 br-yellow text-yellow">Our Services</div>
+            </div>
 
-                        <div class="mt-4 text-white col-md-9 text-left">I am currently pursuing B.Tech in Computers from Thapar University, Patiala. Builting this website is one of the best experience because it helped me to think about the aspects of the coding that are very usefull in a coder's daily routine.</div>
-                    </center>
+            <div class="card mt-3 br-yellow text-black" style="width: 18rem; ">
+                <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
+                <div class="card-body bg-yellow">
+                    <h2>Himani Bansal</h2>
+                    <p class="card-text"> Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city!</p>
+                </div>
+            </div>
+
+            <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
+                <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
+                <div class="card-body bg-yellow">
+                    <h2>Anuj Singla</h2>
+                    <p class="card-text"> Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city! </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+    <div class="bg-black  justify-content-around " id="faqs">
+        <div class="text-white text-center h4 pt-4     ">Top FAQs</div>
+        <div class="text-white text-center pb-5">Renting a Bike should be Easy, Like our FAQs</div>
+        <div class="row justify-content-around col-md-12">
+            <div class="col-md-5 border mt-2 ">
+                <div class=" border mb-2 mt-2">
+                    <div class="text-white pl-1">How do I pay?</div>
+                    <div class="text-white pl-1">You can pay online using Paytm or Google Pay only.</div>
+                </div>
+                <div class=" border mb-2">
+                    <div class="text-white pl-1">Where can I pick up the bike from?</div>
+                    <div class="text-white pl-1">The bike/scooter could be pick up from Thapar's Parking.</div>
+                </div>
+                <div class=" border mb-2">
+                    <div class="text-white pl-1">Will I get a complementry helmet for driving?</div>
+                    <div class="text-white pl-1">MyMopeds provides one helmet complementry with each booking. It must be returned while returning the scooty.</div>
                 </div>
 
+            </div>
+            <div class="col-md-5 border mt-2 ">
+                <div class="border mb-2 mt-2">
+                    <div class="text-white pl-1 ">Will I get compensation if I return scooty before time?</div>
+                    <div class="text-white pl-1">No, the amount will be charged on hourly basis.</div>
+                </div>
+                <div class=" border mb-2">
+                    <div class="text-white pl-1">Where do I park the bike/scooter after use?</div>
+                    <div class="text-white pl-1">You must park the vehicle back in the Thapar's parking area.</div>
+                </div>
+                <div class=" border mb-2 ">
+                    <div class="text-white pl-1">What documents do I need to show while booking?</div>
+                    <div class="text-white pl-1">You must show your college ID card and a valid driving license either while or before pick-up.</div>
+                </div>
             </div>
 
         </div>
@@ -374,97 +474,21 @@
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
-        <div class="pt-4 bg-black justify-content-around pb-5" id="contactUs">
-            <div class="mb-4 text-yellow  bg-black br-yellow text-center">
-                <h1>Meet the Developers</h1>
-            </div>
-
-            <div class="row justify-content-around ">
-                <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
-                    <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
-                    <div class="card-body bg-yellow">
-                        <h2>Anmol Jindal</h2>
-                        <p class="card-text">
-                            Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city!
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card mt-3 br-yellow text-black" style="width: 18rem; ">
-                    <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
-                    <div class="card-body bg-yellow">
-                        <h2>Himani Bansal</h2>
-                        <p class="card-text">  Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city!</p>
-                    </div>
-                </div>
-
-                <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
-                    <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
-                    <div class="card-body bg-yellow">
-                        <h2>Anuj Singla</h2>
-                        <p class="card-text">  Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city! </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-        <div class="bg-black  justify-content-around " id="faqs">
-            <div class="text-white text-center h4 pt-4     ">Top FAQs</div>
-            <div class="text-white text-center pb-5">Renting a Bike should be Easy, Like our FAQs</div>
-            <div class="row justify-content-around col-md-12">
-                <div class="col-md-5 border mt-2 ">
-                    <div class=" border mb-2 mt-2">
-                        <div class="text-white pl-1">How do I pay?</div>
-                        <div class="text-white pl-1">You can pay online using Paytm or Google Pay only.</div>
-                    </div>
-                    <div class=" border mb-2">
-                        <div class="text-white pl-1">Where can I pick up the bike from?</div>
-                        <div class="text-white pl-1">The bike/scooter could be pick up from Thapar's Parking.</div>
-                    </div>
-                    <div class=" border mb-2">
-                        <div class="text-white pl-1">Will I get a complementry helmet for driving?</div>
-                        <div class="text-white pl-1">MyMopeds provides one helmet complementry with each booking. It must be returned while returning the scooty.</div>
-                    </div>
 
-                </div>
-                <div class="col-md-5 border mt-2 ">
-                    <div class="border mb-2 mt-2">
-                        <div class="text-white pl-1 ">Will I get compensation if I return scooty before time?</div>
-                        <div class="text-white pl-1">No, the amount will be charged on hourly basis.</div>
-                    </div>
-                    <div class=" border mb-2">
-                        <div class="text-white pl-1">Where do I park the bike/scooter after use?</div>
-                        <div class="text-white pl-1">You must park the vehicle back in the Thapar's parking area.</div>
-                    </div>
-                    <div class=" border mb-2 ">
-                        <div class="text-white pl-1">What documents do I need to show while booking?</div>
-                        <div class="text-white pl-1">You must show your college ID card and a valid driving license either while or before pick-up.</div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-
-
-
-            <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-
+    </div>
+    <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+    <div class="bg-black">
+        <div class="text-white">
+            <marquee behavior="" direction="right">Please Remain calm</marquee>
         </div>
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-        <div class="bg-black">
-            <div class="text-white">
-                <marquee behavior="" direction="right">Please Remain calm</marquee>
-            </div>
 
-        </div>
-        <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+    </div>
+    <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
-
+    
     </div>
 </body>
 
