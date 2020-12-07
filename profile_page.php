@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>MyMopeds</title>
@@ -8,6 +9,7 @@
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/mymopeds.css">
 </head>
+
 <body>
     <div class="">
         <div class="">
@@ -32,6 +34,74 @@
 
                     </div>
                 </center>
+                <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+
+                <div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="bookYourRide">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-black br-yellow">
+                            <div class="modal-header bg-black text-yellow mb-4 p-2">
+                                <h5 class="modal-title">Book Your Ride</h5>
+                                <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <center>
+                                        <div class="form-group col-md-7">
+
+                                            <label for="bookDate" class="text-yellow">
+                                                Date </label>
+                                                <div class="spinner-border text-yellow" id="namecheck" role="status">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+
+
+                                                <input type="date" class="form-control btn-br-normal bg-yellow" name="bookDate" id="bookDate" placeholder="Date">
+                                           
+
+
+                                        </div>
+
+                                        <div class="form-group col-md-7">
+                                            <label for="txtBookTime" class="text-yellow ">Slot Number
+                                                <small id="errBookTime" class="text-white"></small></label>
+                                            <select type="list" class="form-control bg-yellow" id="txtBookTime" name="txtBookTime" placeholder="Time Slot">
+                                                <option class="bg-yellow text-black" value="8">8-9</option>
+                                                <option class="bg-black text-yellow" value="9">9-10</option>
+                                                <option class="bg-yellow text-black" value="10">10-11</option>
+                                                <option class="bg-black text-yellow" value="11">11-12</option>
+                                                <option class="bg-yellow text-black" value="12">12-13</option>
+                                                <option class="bg-black text-yellow" value="13">13-14</option>
+                                                <option class="bg-yellow text-black" value="14">14-15</option>
+                                                <option class="bg-black text-yellow" value="15">15-16</option>
+                                                <option class="bg-yellow text-black" value="16">16-17</option>
+                                                <option class="bg-black text-yellow" value="17">17-18</option>
+                                                <option class="bg-yellow text-black" value="18">18-19</option>
+
+                                            
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="input_chkTNC" required>
+                                                <label class="form-check-label text-yellow" for="input_chkTNC">
+                                                    Accept Our Terms and Conditions
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row justify-content-around">
+                                            <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="signup_btn" id="singup_btn" type="button" value='signup'>Book Now!</div>
+                                        </div>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
                 <div>
@@ -59,7 +129,7 @@
                                 </ul>
                                 <form class="form-inline my-2 my-lg-0">
 
-                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Signup">SignUp</button>
+                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#bookYourRide">Book Your Ride</button>
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Login">Login</button>
 
                                 </form>
@@ -98,4 +168,5 @@
     </div>
 
 </body>
+
 </html>
