@@ -38,26 +38,37 @@
         })
     </script>
 
+<<<<<<< HEAD
+=======
+    })
+       
+         $("#Login_btn").click(function(){
+//                  
+                    var rno=$("#txtLoginRno").val();
+                 
+                    var pwd=$("#txtLoginPwd").val();
+                
+                   var actionUrl="login.php?rno="+rno+"&pwd="+pwd;
+                        
+                        $.get(actionUrl, function (output) {
+            if(output=="")
+                {
+                    $("#Login").toggle();
+                }
+            
+                    })
+                })
+    
+   
+})
+>>>>>>> 613f24e1fd619f96a4f89f079703b5deb240c6db
 
     <title>MyMopeds</title>
     
 <!--    ---------------login script----------------->
-    <script>
-    $(document).ready(function(){
-         $("#Login_btn").click(function(){
-//                    alert("hello");
-                    var rno=$("#txtLoginRno").val();
-                    alert(rno);
-                    var pwd=$("#txtLoginPwd").val();
-                   alert(pwd);
-                    $.get("ajax-login-process.php?rno="+rno+"&pwd="+pwd,function(solution){
-                        $("#reaction").html(solution);
-                        
-                    });
-                });
     
-    });
-    </script>
+   
+  
 </head>
 
 <body>
