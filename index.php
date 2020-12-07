@@ -40,6 +40,24 @@
 
 
     <title>MyMopeds</title>
+    
+<!--    ---------------login script----------------->
+    <script>
+    $(document).ready(function(){
+         $("#Login_btn").click(function(){
+//                    alert("hello");
+                    var rno=$("#txtLoginRno").val();
+                    alert(rno);
+                    var pwd=$("#txtLoginPwd").val();
+                   alert(pwd);
+                    $.get("ajax-login-process.php?rno="+rno+"&pwd="+pwd,function(solution){
+                        $("#reaction").html(solution);
+                        
+                    });
+                });
+    
+    });
+    </script>
 </head>
 
 <body>
@@ -247,9 +265,57 @@
                             </center>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
+
+                    
+           
+						
+					
+      </div>
+
+
+<!------------**************Login**************--------->
+
+<div class="modal pb-4 pt-4 mt-4 " tabindex="-1" role="dialog" id="Login">
+  <div class="modal-dialog">
+    <div class="modal-content bg-black br-yellow">
+      <div class="modal-header bg-black text-yellow mb-4 p-2">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                   <form>
+                 <center>
+                 <div class="form-group col-md-10">
+							<label for="txtLoginRno" class="text-yellow ">Roll Number
+							<small id="errLoginRno" class="text-white"></small></label>
+							<input type="text" class="form-control btn-br-normal" id="txtLoginRno" name="txtLoginRno" placeholder="Roll number">
+							
+						</div>
+                   
+                    <div class="form-group col-md-10">
+							<label for="txtLoginPwd" class="text-yellow">Password
+							<small id="errLoginPwd" class="text-white"></small></label>
+							<input type="password" class="form-control btn-br-normal" id="txtLoginPwd" name="txtLoginPwd" placeholder="Password">
+						</div>
+                     
+                   <center><span id="reaction" class="text-white" ></span></center>
+                     
+                    <div class="form-row justify-content-around">
+                        <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="Login_btn" id="Login_btn" type="button" value='login'>Login</div>
+                     </div>
+						</center>
+					</form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
         <!---------------------------------------->
