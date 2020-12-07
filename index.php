@@ -35,14 +35,7 @@
                     }
                 })
             })
-        })
-    </script>
-
-<<<<<<< HEAD
-=======
-    })
-       
-         $("#Login_btn").click(function(){
+             $("#Login_btn").click(function(){
 //                  
                     var rno=$("#txtLoginRno").val();
                  
@@ -58,10 +51,10 @@
             
                     })
                 })
-    
-   
-})
->>>>>>> 613f24e1fd619f96a4f89f079703b5deb240c6db
+        })
+    </script>
+
+
 
     <title>MyMopeds</title>
     
