@@ -16,12 +16,8 @@
                 var Pwd = $("#txtPwd").val();
                 var NewPwd = $("#txtNewPwd").val();
                 var CnfNewPwd = $("#txtCnfNewPwd").val();
-                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
-
-                
-                $.get("change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd, function(response) {
-                    // $("#message").html(response);
-                    if (response == "") {
+                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);              
+       
 
                 var actionUrl="change_pass.php?Rno="+Rno+"&Pwd="+Pwd+"&NewPwd="+NewPwd+"&CnfNewPwd="+CnfNewPwd;
                  $.get(actionUrl,function(response){
@@ -38,19 +34,20 @@
 
             })
             $("#bookSlot").click(function() {
+               
                 var bookTime  = $("#txtBookTime").val();
                 var bookDate = $("#bookDate").val();
-               actionUrl="bookSlot.php?bookDate=" + bookDate + "&bookTime=" + bookTime 
-                alert(bookTime+"  "+bookDate);
+               var actionUrl="bookSlot.php?bookDate=" + bookDate + "&bookTime=" + bookTime 
+//                alert(bookTime+"  "+bookDate);
                 
                 $.get(actionUrl, function(response) {
                     // $("#message").html(response);
-                    alert(response);
+//                    alert(response);
                     if (response == "") {
                         
                         alert('Booked Succesfully');
                     } else {
-                        alert('Please Try Again');
+                        alert(response);
                     }
                 })
 
@@ -181,14 +178,14 @@
                                 </ul>
                                 <form class="form-inline my-2 my-lg-0">
 
-                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Signup">SignUp</button>
-                                    <a href="logout.php">
-                                        <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Logout">Logout</button>
-                                    </a>
+  
+                                   
+                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#bookYourRide">Book Your Ride</button>
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#AccDetails">Account Details</button>
 
-                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#bookYourRide">Book Your Ride</button>
-                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Login">Login</button>
+                                     <a href="logout.php">
+                                        <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Logout">Logout</button>
+                                    </a>
 
                                 </form>
                             </div>
