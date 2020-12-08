@@ -17,10 +17,19 @@
                 var NewPwd = $("#txtNewPwd").val();
                 var CnfNewPwd = $("#txtCnfNewPwd").val();
                 //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
+<<<<<<< HEAD
                 
                 $.get("change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd, function(response) {
                     // $("#message").html(response);
                     if (response == "") {
+=======
+                var actionUrl="change_pass.php?Rno="+Rno+"&Pwd="+Pwd+"&NewPwd="+NewPwd+"&CnfNewPwd="+CnfNewPwd;
+                 $.get(actionUrl,function(response){
+                  // $("#message").html(response);
+                     alert(response);
+                     if(response=="")
+                         {
+>>>>>>> e64b8edb3fa86a627e8798acc191bcd17c94d1cc
                         $('#AccDetails').modal('toggle');
                         $('#SuccessDetails').modal('toggle');
                     } else {
