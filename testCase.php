@@ -1,7 +1,9 @@
+<!--
+
 <?php 
 include_once("connection.php");
 
-for($i=0;$i<365;$i++)
+for($i=0;$i<10;$i++)
 {   
 $d=strtotime("+$i day");
 $s=date('y-m-d',$d);
@@ -21,3 +23,4 @@ else
 
     
 ?>
+-->

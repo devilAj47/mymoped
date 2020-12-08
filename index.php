@@ -48,6 +48,7 @@
                 $.get(actionUrl, function(output) {
                     if (output == "") {
                         $("#Login").modal('toggle');
+                        location.href= "profile_page.php";
                         
 //                        
                     }
@@ -448,9 +449,9 @@
 
     </div>
     <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-
     
-    </div>
+    
+    
 </body>
 
 </html>

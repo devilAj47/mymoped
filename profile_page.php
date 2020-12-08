@@ -8,31 +8,50 @@
     <script src="js/jquery-1.8.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/mymopeds.css">
-    
+
     <script>
         $(document).ready(function() {
-            $("#ChangePass").click(function(){
-                var Rno=$("#txtRno").val();
-                    var Pwd=$("#txtPwd").val();
-                var NewPwd=$("#txtNewPwd").val();
-                var CnfNewPwd=$("#txtCnfNewPwd").val();
+            $("#ChangePass").click(function() {
+                var Rno = $("#txtRno").val();
+                var Pwd = $("#txtPwd").val();
+                var NewPwd = $("#txtNewPwd").val();
+                var CnfNewPwd = $("#txtCnfNewPwd").val();
                 //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
-                 $.get("change_pass.php?Rno="+Rno+"&Pwd="+Pwd+"&NewPwd="+NewPwd+"&CnfNewPwd="+CnfNewPwd,function(response){
-                  // $("#message").html(response);
-                     if(response=="")
-                         {
+                
+                $.get("change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd, function(response) {
+                    // $("#message").html(response);
+                    if (response == "") {
                         $('#AccDetails').modal('toggle');
                         $('#SuccessDetails').modal('toggle');
-                         }
-                     else{
-                          $('#FailedDetails').modal('toggle');
-                     }
-               })
-                
+                    } else {
+                        $('#FailedDetails').modal('toggle');
+                    }
+                })
+
             })
+            $("#bookSlot").click(function() {
+                var bookTime  = $("#txtBookTime").val();
+                var bookDate = $("#bookDate").val();
+               actionUrl="bookSlot.php?bookDate=" + bookDate + "&bookTime=" + bookTime 
+                alert(bookTime+"  "+bookDate);
+                
+                $.get(actionUrl, function(response) {
+                    // $("#message").html(response);
+                    alert(response);
+                    if (response == "") {
+                        
+                        alert('Booked Succesfully');
+                    } else {
+                        alert('Please Try Again');
+                    }
+                })
+
+            })
+
         })
+
     </script>
-    
+
 </head>
 
 <body>
@@ -77,13 +96,13 @@
 
                                             <label for="bookDate" class="text-yellow">
                                                 Date </label>
-                                                <div class="spinner-border text-yellow" id="namecheck" role="status">
-                                                    <span class="sr-only">Loading...</span>
-                                                </div>
+                                            <div class="spinner-border text-yellow" id="namecheck" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
 
 
-                                                <input type="date" class="form-control btn-br-normal bg-yellow" name="bookDate" id="bookDate" placeholder="Date">
-                                           
+                                            <input type="date" class="form-control btn-br-normal bg-yellow" name="bookDate" id="bookDate" placeholder="Date">
+
 
 
                                         </div>
@@ -104,7 +123,7 @@
                                                 <option class="bg-black text-yellow" value="17">17-18</option>
                                                 <option class="bg-yellow text-black" value="18">18-19</option>
 
-                                            
+
                                             </select>
 
                                         </div>
@@ -119,7 +138,7 @@
                                         </div>
 
                                         <div class="form-row justify-content-around">
-                                            <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="signup_btn" id="singup_btn" type="button" value='signup'>Book Now!</div>
+                                            <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="bookSlot" id="bookSlot" type="button" value='bookSlot'>Book Now!</div>
                                         </div>
                                     </center>
                                 </form>
@@ -154,17 +173,15 @@
                                 </ul>
                                 <form class="form-inline my-2 my-lg-0">
 
-<<<<<<< HEAD
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Signup">SignUp</button>
                                     <a href="logout.php">
-                                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Logout">Logout</button>
+                                        <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Logout">Logout</button>
                                     </a>
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#AccDetails">Account Details</button>
-=======
+
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#bookYourRide">Book Your Ride</button>
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Login">Login</button>
 
->>>>>>> fbf0d23a99055d1e7bc2865a4d91764b827f4aa1
                                 </form>
                             </div>
                         </nav>
@@ -199,106 +216,106 @@
             </div>
         </div>
     </div>
-<!------------------------------------------------------Account Details--------------------------------------------->
-<div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="AccDetails">
-            <div class="modal-dialog">
-                <div class="modal-content bg-black br-yellow">
-                    <div class="modal-header bg-black text-yellow mb-4 p-2">
-                        <h5 class="modal-title">Change Ur Password</h5>
-                        <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <center>
-                                
-                                 <div class="form-group col-md-10">
-                                    <label for="txtRno" class="text-yellow ">Roll Number
-                                        <small id="errRno" class="text-white"></small></label>
-                                    <input type="text" class="form-control btn-br-normal" id="txtRno" name="txtRno" placeholder="Roll number">
+    <!------------------------------------------------------Account Details--------------------------------------------->
+    <div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="AccDetails">
+        <div class="modal-dialog">
+            <div class="modal-content bg-black br-yellow">
+                <div class="modal-header bg-black text-yellow mb-4 p-2">
+                    <h5 class="modal-title">Change Ur Password</h5>
+                    <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <center>
 
-                                </div>
+                            <div class="form-group col-md-10">
+                                <label for="txtRno" class="text-yellow ">Roll Number
+                                    <small id="errRno" class="text-white"></small></label>
+                                <input type="text" class="form-control btn-br-normal" id="txtRno" name="txtRno" placeholder="Roll number">
 
-                                <div class="form-group col-md-10">
-                                    <label for="txtPwd" class="text-yellow">Current Password
-                                        <small id="errPwd" class="text-white"></small></label>
-                                    <input type="password" class="form-control btn-br-normal" id="txtPwd" name="txtPwd" placeholder="Password">
+                            </div>
 
-
-                                </div>
-
-                                <div class="form-group col-md-10">
-                                    <label for="txtPwd" class="text-yellow">New Password
-                                        <small id="errNPwd" class="text-white"></small></label>
-                                    <input type="password" class="form-control btn-br-normal" id="txtNewPwd" name="txtNewPwd">
+                            <div class="form-group col-md-10">
+                                <label for="txtPwd" class="text-yellow">Current Password
+                                    <small id="errPwd" class="text-white"></small></label>
+                                <input type="password" class="form-control btn-br-normal" id="txtPwd" name="txtPwd" placeholder="Password">
 
 
-                                </div>
+                            </div>
 
-                                 <div class="form-group col-md-10">
-                                    <label for="txtPwd" class="text-yellow">Confirm New Password
-                                        <small id="errCnfNewPwd" class="text-white"></small></label>
-                                    <input type="password" class="form-control btn-br-normal" id="txtCnfNewPwd" name="txtCnfNewPwd">
+                            <div class="form-group col-md-10">
+                                <label for="txtPwd" class="text-yellow">New Password
+                                    <small id="errNPwd" class="text-white"></small></label>
+                                <input type="password" class="form-control btn-br-normal" id="txtNewPwd" name="txtNewPwd">
 
 
-                                </div>
-                               
+                            </div>
 
-                                
-                                <div class="form-row justify-content-around">
-                                    <div class="btn btn-br-normal btn-black col-md-5 z-index_psv" name="ChangePass" id="ChangePass" type="button" value='changepass'>Change Password
-                                        <small id="message" class="text-white"></small></div>
-                                </div>
-                            </center>
-                        </form>
-                    </div>
+                            <div class="form-group col-md-10">
+                                <label for="txtPwd" class="text-yellow">Confirm New Password
+                                    <small id="errCnfNewPwd" class="text-white"></small></label>
+                                <input type="password" class="form-control btn-br-normal" id="txtCnfNewPwd" name="txtCnfNewPwd">
+
+
+                            </div>
+
+
+
+                            <div class="form-row justify-content-around">
+                                <div class="btn btn-br-normal btn-black col-md-5 z-index_psv" name="ChangePass" id="ChangePass" type="button" value='changepass'>Change Password
+                                    <small id="message" class="text-white"></small></div>
+                            </div>
+                        </center>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
 
- <div class="modal" tabindex="-1" role="dialog" id="SuccessDetails">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content bg-black br-yellow">
-                    <div class="modal-header bg-black text-yellow pl-4 mb-4 p-2">
-                        <h5 class="modal-title">Mymopeds</h5>
-                        <button type="button" class="close text-yellow" data-dismiss="modal" style="color:yellow;" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-yellow">Password Changed Successfully!</p>
-                    </div>
-                    <div class="modal-footer">
+    <div class="modal" tabindex="-1" role="dialog" id="SuccessDetails">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-black br-yellow">
+                <div class="modal-header bg-black text-yellow pl-4 mb-4 p-2">
+                    <h5 class="modal-title">Mymopeds</h5>
+                    <button type="button" class="close text-yellow" data-dismiss="modal" style="color:yellow;" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-yellow">Password Changed Successfully!</p>
+                </div>
+                <div class="modal-footer">
 
-                        <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
-                    </div>
+                    <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-<div class="modal" tabindex="-1" role="dialog" id="FailedDetails">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content bg-black br-yellow">
-                    <div class="modal-header bg-black text-yellow pl-4 mb-4 p-2">
-                        <h5 class="modal-title">Mymopeds</h5>
-                        <button type="button" class="close text-yellow" data-dismiss="modal" style="color:yellow;" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-yellow">Please check your password again.</p>
-                    </div>
-                    <div class="modal-footer">
+    <div class="modal" tabindex="-1" role="dialog" id="FailedDetails">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-black br-yellow">
+                <div class="modal-header bg-black text-yellow pl-4 mb-4 p-2">
+                    <h5 class="modal-title">Mymopeds</h5>
+                    <button type="button" class="close text-yellow" data-dismiss="modal" style="color:yellow;" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-yellow">Please check your password again.</p>
+                </div>
+                <div class="modal-footer">
 
-                        <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
-                    </div>
+                    <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
 </body>
 
