@@ -16,7 +16,13 @@
                 var Pwd = $("#txtPwd").val();
                 var NewPwd = $("#txtNewPwd").val();
                 var CnfNewPwd = $("#txtCnfNewPwd").val();
+<<<<<<< HEAD
+                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
+
+                
+=======
                 //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);              
+<<<<<<< HEAD
 
 
                 var actionUrl = "change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd;
@@ -24,6 +30,17 @@
                     // $("#message").html(response);
                     alert(response);
                     if (response == "") {
+=======
+       
+>>>>>>> refs/remotes/origin/master
+
+                var actionUrl="change_pass.php?Rno="+Rno+"&Pwd="+Pwd+"&NewPwd="+NewPwd+"&CnfNewPwd="+CnfNewPwd;
+                 $.get(actionUrl,function(response){
+                  // $("#message").html(response);
+                    // alert(response);
+                     if(response=="")
+                         {
+>>>>>>> refs/remotes/origin/master
                         $('#AccDetails').modal('toggle');
                         $('#SuccessDetails').modal('toggle');
                     } else {
@@ -57,9 +74,39 @@
                 $('#getMembership').modal('toggle');
             })
 
-        })
+            
 
+        })
+            
     </script>
+    
+              <script>
+	function showpreview(file) {
+
+        if (file.files && file.files[0])
+		 {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#prev').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(file.files[0]);
+        }
+
+    }
+                  function showpreview(fyle) {
+
+        if (fyle.files && fyle.files[0])
+		 {
+            var reader = new FileReader();
+            reader.onload = function (ev) {
+                $('#prev1').attr('src', ev.target.result);
+            }
+            reader.readAsDataURL(fyle.files[0]);
+        }
+
+    }
+	</script>  
+
 
 </head>
 
@@ -280,54 +327,94 @@
         <div class="modal-dialog">
             <div class="modal-content bg-black br-yellow">
                 <div class="modal-header bg-black text-yellow mb-4 p-2">
-                    <h5 class="modal-title">Change Ur Password</h5>
+                    <h5 class="modal-title">Update Your Profile</h5>
                     <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <center>
+                      <form action="Profile-Customer-Process.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="hdn" name="hdn">
+                    <input type="hidden" id="hdn1" name="hdn1">
+                    <center>
+                                <div class="form-group col-md-10">
 
-                            <div class="form-group col-md-10">
-                                <label for="txtRno" class="text-yellow ">Roll Number
-                                    <small id="errRno" class="text-white"></small></label>
-                                <input type="text" class="form-control btn-br-normal" id="txtRno" name="txtRno" placeholder="Roll number">
+                                    <label for="txtName" class="text-yellow">
+                                        Full Name
+                                        
+                                        <span id="checkrno" class="text-right text-white"></span></label>
 
-                            </div>
-
-                            <div class="form-group col-md-10">
-                                <label for="txtPwd" class="text-yellow">Current Password
-                                    <small id="errPwd" class="text-white"></small></label>
-                                <input type="password" class="form-control btn-br-normal" id="txtPwd" name="txtPwd" placeholder="Password">
+                                    <input type="text" class="form-control btn-br-normal" name="txtName" id="txtName" disabled value='<?php session_start(); echo $_SESSION["activeuser"];?>'>
 
 
-                            </div>
-
-                            <div class="form-group col-md-10">
-                                <label for="txtPwd" class="text-yellow">New Password
-                                    <small id="errNPwd" class="text-white"></small></label>
-                                <input type="password" class="form-control btn-br-normal" id="txtNewPwd" name="txtNewPwd">
+                                </div>
 
 
-                            </div>
+                                <div class="form-group  col-md-10">
+                                    <label for="txtmail" class="text-yellow">Email address
 
-                            <div class="form-group col-md-10">
-                                <label for="txtPwd" class="text-yellow">Confirm New Password
-                                    <small id="errCnfNewPwd" class="text-white"></small></label>
-                                <input type="password" class="form-control btn-br-normal" id="txtCnfNewPwd" name="txtCnfNewPwd">
+                                        <small id="emailHelp" class="text-white"></small>
+                                    </label>
+                                    <input type="email" class="form-control btn-br-normal" id="txtmail" placeholder="Email" name="txtmail">
 
+                                </div>
 
-                            </div>
+                                <div class="form-group col-md-10">
+                                    <label for="txtRno" class="text-yellow ">Roll Number
+                                        <small id="errRno" class="text-white"></small></label>
+                                    <input type="text" class="form-control btn-br-normal" id="txtRno" name="txtRno" placeholder="Roll number">
 
+                                </div>
 
+                                <div class="form-group col-md-10">
+                                    <label for="txtMob" class="text-yellow ">Mobile Number
+                                        <small id="errMob" class="text-white"></small></label>
+                                    <input type="text" class="form-control btn-br-normal" id="txtMob" name="txtMob" placeholder="Mobile Number">
 
-                            <div class="form-row justify-content-around">
-                                <div class="btn btn-br-normal btn-black col-md-5 z-index_psv" name="ChangePass" id="ChangePass" type="button" value='changepass'>Change Password
-                                    <small id="message" class="text-white"></small></div>
-                            </div>
-                        </center>
-                    </form>
+                                </div>
+
+                                <div class="form-group col-md-10">
+                                    <label for="txtHostel" class="text-yellow ">Hostel
+                                        <small id="errHostel" class="text-white"></small></label>
+                                    <select type="list" class="form-control bg-yellow" id="txtHostel" name="txtHostel" placeholder="Hostel Name">
+                                                <option class="bg-yellow text-black" value="E">Hostel-E</option>
+                                                <option class="bg-black text-yellow" value="G">Hostel-G</option>
+                                                <option class="bg-yellow text-black" value="PG">Hostel-PG</option>
+                                                <option class="bg-black text-yellow" value="I">Hostel-I</option>
+                                                <option class="bg-yellow text-black" value="N">Hostel-N</option>
+                                                <option class="bg-black text-yellow" value="M">Hostel-M</option>
+                                                <option class="bg-yellow text-black" value="J">Hostel-J</option>
+                                                <option class="bg-black text-yellow" value="B">Hostel-B</option>
+                                                <option class="bg-yellow text-black" value="C">Hostel-C</option>
+                                                <option class="bg-black text-yellow" value="K">Hostel-K</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                 <div class="form-group col-md-6">
+                                    <label for="DrivLic" class="text-yellow ">Driving Licence
+                                     </label>
+                                    <input type="file" required name="DrivLic" id="DrivLic">
+                                    <img src="images/IMG_0013.jpg" id="prev" width="150" height="150" alt="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                    <label for="AadharCard" class="text-yellow ">Aadhar Card
+                                     </label>
+                                    <input type="file" required name="AadharCard" id="AadharCard">
+                                    <img src="images/IMG_0013.jpg" id="prev1" width="150" height="150" alt="">
+                                </div>
+                                </div>
+                                <div class="form-row justify-content-around">
+                                <button type="submit" name="btn" class="btn btn-br-normal btn-black col-md-3 z-index_psv"  id="btnsave" value="Save" >Save</button>
+                                <button type="submit" name="btn" class="btn btn-br-normal btn-black col-md-3 z-index_psv"  id="btnUpdate" value="Update" >Update</button>
+                        </div>
+                                
+                            </center>
+                        </form>
+                    
+                    
+                  
+                   <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Cpass">Change Password</button>
+                   
                 </div>
             </div>
         </div>
@@ -375,6 +462,67 @@
             </div>
         </div>
     </div>
+
+
+<div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="Cpass">
+        <div class="modal-dialog">
+            <div class="modal-content bg-black br-yellow">
+                <div class="modal-header bg-black text-yellow mb-4 p-2">
+                    <h5 class="modal-title">Change Your Password</h5>
+                    <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  
+                   <form>
+                        <center>
+
+                            <div class="form-group col-md-10">
+                                <label for="txtRno" class="text-yellow ">Roll Number
+                                    <small id="errRno" class="text-white"></small></label>
+                                <input type="text" class="form-control btn-br-normal" id="txtRno" name="txtRno" placeholder="Roll number">
+
+                            </div>
+
+                            <div class="form-group col-md-10">
+                                <label for="txtPwd" class="text-yellow">Current Password
+                                    <small id="errPwd" class="text-white"></small></label>
+                                <input type="password" class="form-control btn-br-normal" id="txtPwd" name="txtPwd" placeholder="Password">
+
+
+                            </div>
+
+                            <div class="form-group col-md-10">
+                                <label for="txtPwd" class="text-yellow">New Password
+                                    <small id="errNPwd" class="text-white"></small></label>
+                                <input type="password" class="form-control btn-br-normal" id="txtNewPwd" name="txtNewPwd">
+
+
+                            </div>
+
+                            <div class="form-group col-md-10">
+                                <label for="txtPwd" class="text-yellow">Confirm New Password
+                                    <small id="errCnfNewPwd" class="text-white"></small></label>
+                                <input type="password" class="form-control btn-br-normal" id="txtCnfNewPwd" name="txtCnfNewPwd">
+
+
+                            </div>
+
+
+
+                            <div class="form-row justify-content-around">
+                                <div class="btn btn-br-normal btn-black col-md-5 z-index_psv" name="ChangePass" id="ChangePass" type="button" value='changepass'>Change Password
+                                    <small id="message" class="text-white"></small></div>
+                            </div>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
 
 </body>
 
