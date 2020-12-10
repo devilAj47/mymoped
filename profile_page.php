@@ -44,8 +44,9 @@
                     // $("#message").html(response);
 //                    alert(response);
                     if (response == "") {
+                        $('#bookYourRide').modal('toggle');
+                        $('#successBooked').modal('toggle');
                         
-                        alert('Booked Succesfully');
                     } else {
                         alert(response);
                     }
@@ -83,6 +84,27 @@
 
                     </div>
                 </center>
+                                <!--        Ride Successfully Booked            -->
+
+                <div class="modal" tabindex="-1" role="dialog" id="successBooked">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content bg-black br-yellow">
+                    <div class="modal-header bg-black text-yellow pl-4 mb-4 p-2">
+                        <h5 class="modal-title">Congratulations!</h5>
+                        <button type="button" class="close text-yellow" data-dismiss="modal" style="color:yellow;" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-yellow">You ride has been booked Successfully!</p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
                 <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
                 <div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="bookYourRide">
