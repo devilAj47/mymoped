@@ -16,14 +16,14 @@
                 var Pwd = $("#txtPwd").val();
                 var NewPwd = $("#txtNewPwd").val();
                 var CnfNewPwd = $("#txtCnfNewPwd").val();
-<<<<<<< HEAD
+
                 //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
 
                 
-=======
+
                 //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);              
        
->>>>>>> refs/remotes/origin/master
+
 
                 var actionUrl="change_pass.php?Rno="+Rno+"&Pwd="+Pwd+"&NewPwd="+NewPwd+"&CnfNewPwd="+CnfNewPwd;
                  $.get(actionUrl,function(response){
@@ -58,9 +58,6 @@
                 })
 
             })
-
-            
-
         })
             
     </script>
@@ -328,19 +325,19 @@
                                  <div class="form-group col-md-6">
                                     <label for="DrivLic" class="text-yellow ">Driving Licence
                                      </label>
-                                    <input type="file" required name="DrivLic" id="DrivLic">
+                                    <input type="file" class="text-yellow" required name="DrivLic" id="DrivLic" >
                                     <img src="images/IMG_0013.jpg" id="prev" width="150" height="150" alt="">
                                     </div>
                                     <div class="form-group col-md-6">
-                                    <label for="AadharCard" class="text-yellow ">Aadhar Card
+                                    <label for="CollegeID" class="text-yellow ">College ID
                                      </label>
-                                    <input type="file" required name="AadharCard" id="AadharCard">
+                                    <input type="file" class="text-yellow" required name="CollegeID" id="CollegeID">
                                     <img src="images/IMG_0013.jpg" id="prev1" width="150" height="150" alt="">
                                 </div>
                                 </div>
                                 <div class="form-row justify-content-around">
                                 <button type="submit" name="btn" class="btn btn-br-normal btn-black col-md-3 z-index_psv"  id="btnsave" value="Save" >Save</button>
-                                <button type="submit" name="btn" class="btn btn-br-normal btn-black col-md-3 z-index_psv"  id="btnUpdate" value="Update" >Update</button>
+                                <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Cpass">Change Password</button>
                         </div>
                                 
                             </center>
@@ -348,7 +345,7 @@
                     
                     
                   
-                   <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Cpass">Change Password</button>
+                  
                    
                 </div>
             </div>
