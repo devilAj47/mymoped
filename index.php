@@ -114,7 +114,7 @@
                                         <a class="nav-link h6" href="#about">About</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link h6" href="#contactUs">Contact</a>
+                                        <a class="nav-link h6" href="#priceDetails">Pricing</a>
                                     </li>
                                     <li class="nav-item ">
                                         <a class="nav-link h6" href="#faqs">FAQs</a>
@@ -360,35 +360,44 @@
 
     <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
-    <div class="pt-4 bg-black justify-content-around pb-5" id="contactUs">
+    <div class="pt-4 bg-black justify-content-around pb-5" id="priceDetails">
         <div class="mb-4 text-yellow  bg-black br-yellow text-center">
-            <h1>Meet the Developers</h1>
+            <h1>Price Details</h1>
         </div>
 
         <div class="row justify-content-around ">
-            <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
+            <div class="card mt-3 br-yellow text-black" style="width: 19rem;">
                 <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
                 <div class="card-body bg-yellow">
-                    <h2>Anmol Jindal</h2>
+                    <h2>Non Member</h2>
                     <p class="card-text">
-                        Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city!
+                        Rental Charges Per Hour: 25/- <br>
+                        Per Km Charge: 6/-
                     </p>
                 </div>
             </div>
 
-            <div class="card mt-3 br-yellow text-black" style="width: 18rem; ">
+            <div class="card mt-3 br-yellow text-black" style="width: 19rem; ">
                 <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
                 <div class="card-body bg-yellow">
-                    <h2>Himani Bansal</h2>
-                    <p class="card-text"> Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city!</p>
+                    <h2>Monthly Membership: 110</h2>
+                    <p class="card-text">
+                        You get a total of 5 Bookings
+                        Rental Charges Per Hour: 22/- <br>
+                        Per Km Charge: 5/-
+                    </p>
                 </div>
             </div>
 
-            <div class="card mt-3 br-yellow text-black" style="width: 18rem;">
+            <div class="card mt-3 br-yellow text-black" style="width: 19rem;">
                 <img class="card-img-top" src="images/test_6.jpg" alt="Card image cap">
                 <div class="card-body bg-yellow">
-                    <h2>Anuj Singla</h2>
-                    <p class="card-text"> Currently in 3rd year COE, the basic idea was to help students for easy transportation through the city! </p>
+                    <h2>Quarterly Membership: 300</h2>
+                    <p class="card-text">
+                        You get a total of 15 Bookings
+                        Rental Charges Per Hour: 20/- <br>
+                        Per Km Charge: 4.5/- 
+                    </p>
                 </div>
             </div>
         </div>

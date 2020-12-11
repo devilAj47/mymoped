@@ -21,7 +21,15 @@
 
                 
 
-                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);              
+                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);             
+
+
+                var actionUrl = "change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd;
+                $.get(actionUrl, function(response) {
+                    // $("#message").html(response);
+                    alert(response);
+                    if (response == "") {
+
        
 
 
@@ -31,6 +39,7 @@
                     // alert(response);
                      if(response=="")
                          {
+
                         $('#AccDetails').modal('toggle');
                         $('#SuccessDetails').modal('toggle');
                     } else {
@@ -40,31 +49,41 @@
 
             })
             $("#bookSlot").click(function() {
-               
-                var bookTime  = $("#txtBookTime").val();
+
+                var bookTime = $("#txtBookTime").val();
                 var bookDate = $("#bookDate").val();
-               var actionUrl="bookSlot.php?bookDate=" + bookDate + "&bookTime=" + bookTime 
-//                alert(bookTime+"  "+bookDate);
-                
+                var actionUrl = "bookSlot.php?bookDate=" + bookDate + "&bookTime=" + bookTime
+                //                alert(bookTime+"  "+bookDate);
+
                 $.get(actionUrl, function(response) {
                     // $("#message").html(response);
-//                    alert(response);
+                    //                    alert(response);
                     if (response == "") {
-                        
-                        alert('Booked Succesfully');
+                        $('#bookYourRide').modal('toggle');
+                        $('#successBooked').modal('toggle');
+
                     } else {
                         alert(response);
                     }
                 })
 
             })
+
+            $("#membershipLine").click(function() {
+                $('#bookYourRide').modal('toggle');
+                $('#getMembership').modal('toggle');
+            })
+
+            
+
+
         })
             
     </script>
     
               <script>
 	function showpreview(file) {
-
+alert("hi");
         if (file.files && file.files[0])
 		 {
             var reader = new FileReader();
@@ -75,15 +94,15 @@
         }
 
     }
-                  function showpreview(fyle) {
+                  function showpreview2(file) {
 
-        if (fyle.files && fyle.files[0])
+        if (file.files && file.files[0])
 		 {
             var reader = new FileReader();
             reader.onload = function (ev) {
                 $('#prev1').attr('src', ev.target.result);
             }
-            reader.readAsDataURL(fyle.files[0]);
+            reader.readAsDataURL(file.files[0]);
         }
 
     }
@@ -116,6 +135,60 @@
 
                     </div>
                 </center>
+                <!--        Ride Successfully Booked            -->
+
+                <div class="modal" tabindex="-1" role="dialog" id="successBooked">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content bg-black br-yellow">
+                            <div class="modal-header bg-black text-yellow pl-4 mb-4 p-2">
+                                <h5 class="modal-title">Congratulations!</h5>
+                                <button type="button" class="close text-yellow" data-dismiss="modal" style="color:yellow;" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-yellow">You ride has been booked Successfully!</p>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+                <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+
+                <div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="getMembership">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-black br-yellow">
+                            <div class="modal-header bg-black text-yellow mb-4 p-2">
+                                <h5 class="modal-title">Get A Membership!</h5>
+                                <button type="button" class="close text-yellow" style="color:yellow;" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <center>
+                                        <div class="form-group col-md-7">
+                                            <label for="txtMembershipType" class="text-yellow ">MemberShip
+                                                <small id="errMembershipType" class="text-white"></small></label>
+                                            <select type="list" class="form-control bg-yellow" id="txtMembershipType" name="txtMembershipType" placeholder="">
+                                                <option class="bg-yellow text-black" value="month">Monthly Membership</option>
+                                                <option class="bg-black text-yellow" value="quarter">Quarterly Membership</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row justify-content-around">
+                                            <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="membershipAvail" id="membershipAvail" type="button" value='membershipAvail'>Avail Now!</div>
+                                        </div>
+
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
                 <div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="bookYourRide">
@@ -140,9 +213,6 @@
 
 
                                             <input type="date" class="form-control btn-br-normal bg-yellow" name="bookDate" id="bookDate" placeholder="Date">
-
-
-
                                         </div>
 
                                         <div class="form-group col-md-7">
@@ -160,8 +230,6 @@
                                                 <option class="bg-yellow text-black" value="16">16-17</option>
                                                 <option class="bg-black text-yellow" value="17">17-18</option>
                                                 <option class="bg-yellow text-black" value="18">18-19</option>
-
-
                                             </select>
 
                                         </div>
@@ -178,6 +246,7 @@
                                         <div class="form-row justify-content-around">
                                             <div class="btn btn-br-normal btn-black col-md-3 z-index_psv" name="bookSlot" id="bookSlot" type="button" value='bookSlot'>Book Now!</div>
                                         </div>
+                                        <p class="mt-3 text-yellow text-yellow-hover" id="membershipLine">Still not a member! Want to become one?</p>
                                     </center>
                                 </form>
                             </div>
@@ -211,12 +280,12 @@
                                 </ul>
                                 <form class="form-inline my-2 my-lg-0">
 
-  
-                                   
+
+
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#bookYourRide">Book Your Ride</button>
                                     <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#AccDetails">Account Details</button>
 
-                                     <a href="logout.php">
+                                    <a href="logout.php">
                                         <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Logout">Logout</button>
                                     </a>
 
@@ -325,13 +394,13 @@
                                  <div class="form-group col-md-6">
                                     <label for="DrivLic" class="text-yellow ">Driving Licence
                                      </label>
-                                    <input type="file" class="text-yellow" required name="DrivLic" id="DrivLic" >
+                                    <input type="file" class="text-yellow" required name="DrivLic" id="DrivLic" onchange="showpreview(this);">
                                     <img src="images/IMG_0013.jpg" id="prev" width="150" height="150" alt="">
                                     </div>
                                     <div class="form-group col-md-6">
                                     <label for="CollegeID" class="text-yellow ">College ID
                                      </label>
-                                    <input type="file" class="text-yellow" required name="CollegeID" id="CollegeID">
+                                    <input type="file" class="text-yellow" required name="CollegeID" id="CollegeID" onchange="showpreview2(this);">
                                     <img src="images/IMG_0013.jpg" id="prev1" width="150" height="150" alt="">
                                 </div>
                                 </div>

@@ -110,8 +110,15 @@
 .display_none {
     display: none;
 }
-
-
+.text-yellow-hover{
+    color: #ffe473;
+    
+    
+}
+.text-yellow-hover:hover {
+  color: white;
+    
+}
 
 .form-text-yellow{
         color: #FFE473 !important;
