@@ -11,102 +11,99 @@
 
     <script>
         $(document).ready(function() {
-            $("#ChangePass").click(function() {
-                var Rno = $("#txtRno").val();
-                var Pwd = $("#txtPwd").val();
-                var NewPwd = $("#txtNewPwd").val();
-                var CnfNewPwd = $("#txtCnfNewPwd").val();
+                    $("#ChangePass").click(function() {
+                                var Rno = $("#txtRno").val();
+                                var Pwd = $("#txtPwd").val();
+                                var NewPwd = $("#txtNewPwd").val();
+                                var CnfNewPwd = $("#txtCnfNewPwd").val();
 
-                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
-
-                
-
-                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);             
+                                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
 
 
 
-                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
-                var actionUrl = "change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd;
-                $.get(actionUrl, function(response) {
-                    // $("#message").html(response);
-                    // alert(response);
-                    if (response == "") {
-
-       
+                                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);             
 
 
-                var actionUrl="change_pass.php?Rno="+Rno+"&Pwd="+Pwd+"&NewPwd="+NewPwd+"&CnfNewPwd="+CnfNewPwd;
-                 $.get(actionUrl,function(response){
-                  // $("#message").html(response);
-                    // alert(response);
-                     if(response=="")
-                         {
 
-                        $('#AccDetails').modal('toggle');
-                        $('#SuccessDetails').modal('toggle');
-                    } else {
-                        $('#FailedDetails').modal('toggle');
-                    }
-                })
-
-
-            })
-            $("#bookSlot").click(function() {
-
-                var bookTime = $("#txtBookTime").val();
-                var bookDate = $("#bookDate").val();
-                var actionUrl = "bookSlot.php?bookDate=" + bookDate + "&bookTime=" + bookTime
-                //                alert(bookTime+"  "+bookDate);
-
-                $.get(actionUrl, function(response) {
-                    // $("#message").html(response);
-                    //                    alert(response);
-                    if (response == "") {
-                        $('#bookYourRide').modal('toggle');
-                        $('#successBooked').modal('toggle');
-
-                    } else {
-                        alert(response);
-                    }
-                })
-
-            })
-
-            $("#membershipLine").click(function() {
-                $('#bookYourRide').modal('toggle');
-                $('#getMembership').modal('toggle');
-            })
-            
-            
-            $("#membershipAvail").click(function() {
-
-                var membershipType = $("#txtMembershipType").val();
-                alert(membershipType);
-                if(membershipType=="month"){
-                    var actionUrl = "memberShipMonthprocess.php?membershipType=" + membershipType ;
-                }
-                else{
-                     var actionUrl = "memberShipQuarterprocess.php?membershipType=" + membershipType ;
-                }               
-                             
-
-                $.get(actionUrl, function(response) {
-                    if (response == "") {
-                        alert("Successfully Availed");
-//                        $('#').modal('toggle');
-//                        $('#').modal('toggle');
-
-                    } else {
-                        alert(response);
-                    }
-                })
-
-            })
+                                //alert(Rno+" "+Pwd+" "+NewPwd+" "+CnfNewPwd);
+                                var actionUrl = "change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd;
+                                $.get(actionUrl, function(response) {
+                                        // $("#message").html(response);
+                                        // alert(response);
+                                        if (response == "") {
 
 
 
 
-        })
+                                            var actionUrl = "change_pass.php?Rno=" + Rno + "&Pwd=" + Pwd + "&NewPwd=" + NewPwd + "&CnfNewPwd=" + CnfNewPwd;
+                                            $.get(actionUrl, function(response) {
+                                                // $("#message").html(response);
+                                                // alert(response);
+                                                if (response == "") {
+
+                                                    $('#AccDetails').modal('toggle');
+                                                    $('#SuccessDetails').modal('toggle');
+                                                } else {
+                                                    $('#FailedDetails').modal('toggle');
+                                                }
+                                            })
+
+
+                                        }) $("#bookSlot").click(function() {
+
+                                        var bookTime = $("#txtBookTime").val();
+                                        var bookDate = $("#bookDate").val();
+                                        var actionUrl = "bookSlot.php?bookDate=" + bookDate + "&bookTime=" + bookTime
+                                        //                alert(bookTime+"  "+bookDate);
+
+                                        $.get(actionUrl, function(response) {
+                                            // $("#message").html(response);
+                                            //                    alert(response);
+                                            if (response == "") {
+                                                $('#bookYourRide').modal('toggle');
+                                                $('#successBooked').modal('toggle');
+
+                                            } else {
+                                                alert(response);
+                                            }
+                                        })
+
+                                    })
+
+                                    $("#membershipLine").click(function() {
+                                        $('#bookYourRide').modal('toggle');
+                                        $('#getMembership').modal('toggle');
+                                    })
+
+
+                                    $("#membershipAvail").click(function() {
+
+                                        var membershipType = $("#txtMembershipType").val();
+                                        alert(membershipType);
+                                        if (membershipType == "month") {
+                                            var actionUrl = "memberShipMonthprocess.php?membershipType=" + membershipType;
+                                        } else {
+                                            var actionUrl = "memberShipQuarterprocess.php?membershipType=" + membershipType;
+                                        }
+
+
+                                        $.get(actionUrl, function(response) {
+                                            if (response == "") {
+                                                alert("Successfully Availed");
+                                                //                        $('#').modal('toggle');
+                                                //                        $('#').modal('toggle');
+
+                                            } else {
+                                                alert(response);
+                                            }
+                                        })
+
+                                    })
+
+
+
+
+                                })
 
     </script>
 
@@ -121,44 +118,44 @@
                 }
                 reader.readAsDataURL(file.files[0]);
 
-    
-              <script>
-	function showpreview(file) {
-alert("hi");
-        if (file.files && file.files[0])
-		 {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#prev').attr('src', e.target.result);
 
-            }
+                <
+                script >
+                    function showpreview(file) {
+                        alert("hi");
+                        if (file.files && file.files[0]) {
+                            var reader = new FileReader();
+                            reader.onload = function(e) {
+                                $('#prev').attr('src', e.target.result);
 
-        }
+                            }
 
-
-        function showpreview(fyle) {
-
-            if (fyle.files && fyle.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(ev) {
-                    $('#prev1').attr('src', ev.target.result);
-                }
-                reader.readAsDataURL(fyle.files[0]);
-            }
+                        }
 
 
-    }
-                  function showpreview2(file) {
+                        function showpreview(fyle) {
 
-        if (file.files && file.files[0])
-		 {
-            var reader = new FileReader();
-            reader.onload = function (ev) {
-                $('#prev1').attr('src', ev.target.result);
-            }
-            reader.readAsDataURL(file.files[0]);
+                            if (fyle.files && fyle.files[0]) {
+                                var reader = new FileReader();
+                                reader.onload = function(ev) {
+                                    $('#prev1').attr('src', ev.target.result);
+                                }
+                                reader.readAsDataURL(fyle.files[0]);
+                            }
 
-        }
+
+                        }
+
+                        function showpreview2(file) {
+
+                            if (file.files && file.files[0]) {
+                                var reader = new FileReader();
+                                reader.onload = function(ev) {
+                                    $('#prev1').attr('src', ev.target.result);
+                                }
+                                reader.readAsDataURL(file.files[0]);
+
+                            }
 
     </script>
 
@@ -447,21 +444,25 @@ alert("hi");
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="DrivLic" class="text-yellow ">Driving Licence
-<<<<<<< HEAD
-                                    </label>
-                                    <input type="file" required name="DrivLic" id="DrivLic">
+                                       </label>
+                                    <input type="file" class="text-yellow" required name="DrivLic" id="DrivLic" onchange="showpreview(this);">
                                     <img src="images/IMG_0013.jpg" id="prev" width="150" height="150" alt="">
+
+                                 
+
+
+                                    
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="AadharCard" class="text-yellow ">Aadhar Card
+                                    <label for="CollegeID" class="text-yellow ">College ID
                                     </label>
-                                    <input type="file" required name="AadharCard" id="AadharCard">
+                                    <input type="file" class="text-yellow" required name="CollegeID" id="CollegeID" onchange="showpreview2(this);">
                                     <img src="images/IMG_0013.jpg" id="prev1" width="150" height="150" alt="">
                                 </div>
                             </div>
                             <div class="form-row justify-content-around">
                                 <button type="submit" name="btn" class="btn btn-br-normal btn-black col-md-3 z-index_psv" id="btnsave" value="Save">Save</button>
-                                <button type="submit" name="btn" class="btn btn-br-normal btn-black col-md-3 z-index_psv" id="btnUpdate" value="Update">Update</button>
+                                <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Cpass">Change Password</button>
                             </div>
 
                         </center>
@@ -469,33 +470,9 @@ alert("hi");
 
 
 
-                    <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Cpass">Change Password</button>
 
-=======
-                                     </label>
-                                    <input type="file" class="text-yellow" required name="DrivLic" id="DrivLic" onchange="showpreview(this);">
-                                    <img src="images/IMG_0013.jpg" id="prev" width="150" height="150" alt="">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                    <label for="CollegeID" class="text-yellow ">College ID
-                                     </label>
-                                    <input type="file" class="text-yellow" required name="CollegeID" id="CollegeID" onchange="showpreview2(this);">
-                                    <img src="images/IMG_0013.jpg" id="prev1" width="150" height="150" alt="">
-                                </div>
-                                </div>
-                                <div class="form-row justify-content-around">
-                                <button type="submit" name="btn" class="btn btn-br-normal btn-black col-md-3 z-index_psv"  id="btnsave" value="Save" >Save</button>
-                                <button class="btn btn-black my-2 my-sm-0 mr-4" type="button" data-toggle="modal" data-target="#Cpass">Change Password</button>
-                        </div>
-                                
-                            </center>
-                        </form>
-                    
-                    
-                  
-                  
-                   
->>>>>>> fd15839574175a4f53fe844494c56e7077b5e824
+
+
                 </div>
             </div>
         </div>
@@ -594,7 +571,8 @@ alert("hi");
 
                             <div class="form-row justify-content-around">
                                 <div class="btn btn-br-normal btn-black col-md-5 z-index_psv" name="ChangePass" id="ChangePass" type="button" value='changepass'>Change Password
-                                    <small id="message" class="text-white"></small></div>
+                                    <small id="message" class="text-white"></small>
+                                </div>
                             </div>
                         </center>
                     </form>

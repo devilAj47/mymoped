@@ -8,6 +8,7 @@
     <script src="js/jquery-1.8.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/mymopeds.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <!-- <link rel="stylesheet" href="css/Normal.css">
     <script src="js/signup-workseasy.js"></script> -->
 
@@ -90,8 +91,13 @@
                             <div class=" mt-2 col justify-content-end col-md-4">
 
                                 <div class="mr-4 ml-4">
-                                    <button type="button" class="btn btn-br-normal btn-black">8264245458</button>
-
+                                    
+<!--                                <a href = "mailto: mymopeds@gmail.com">Mail us:</a>-->
+                              <button type="button" class="btn btn-br-normal btn-black">
+                            
+                              
+                               <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=mymopeds@gmail.com" target="_blank" class="text-yellow" style="text-decoration:none;"  onmouseover="this.style.color='black';"  onmouseout="this.style.color='#FFE473';"> Mail us</a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -455,15 +461,19 @@
 
     </div>
     <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
+<!--
     <div class="bg-black">
         <div class="text-white">
             <marquee behavior="" direction="right">Please Remain calm</marquee>
         </div>
+-->
 
-    </div>
+<!--    </div>-->
     <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
 
-
+<div class="footer-copyright text-center py-3 bg-black text-white">© 2020 Copyright:
+     MyMopeds.com
+  </div>
 
 </body>
 
