@@ -8,6 +8,8 @@
     <script src="js/jquery-1.8.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/mymopeds.css">
+    <script src="js/angular.js"></script>
+
 
     <script>
         $(document).ready(function() {
@@ -57,31 +59,53 @@
                 })
 
             })
-            
-            
+
+
             $("#membershipLine").click(function() {
                 $('#bookYourRide').modal('toggle');
                 $('#getMembership').modal('toggle');
             })
-            
-            
+
+
             $("#membershipAvail").click(function() {
 
                 var membershipType = $("#txtMembershipType").val();
                 alert(membershipType);
-                if(membershipType=="month"){
-                    var actionUrl = "memberShipMonthprocess.php?membershipType=" + membershipType ;
+                if (membershipType == "month") {
+                    var actionUrl = "memberShipMonthprocess.php?membershipType=" + membershipType;
+                } else {
+                    var actionUrl = "memberShipQuarterprocess.php?membershipType=" + membershipType;
                 }
-                else{
-                     var actionUrl = "memberShipQuarterprocess.php?membershipType=" + membershipType ;
-                }               
-                             
+
 
                 $.get(actionUrl, function(response) {
                     if (response == "") {
                         alert("Successfully Availed");
-//                        $('#').modal('toggle');
-//                        $('#').modal('toggle');
+                        //                        $('#').modal('toggle');
+                        //                        $('#').modal('toggle');
+
+                    } else {
+                        alert(response);
+                    }
+                })
+
+            })
+
+            $("#getAvailableSlots").click(function() {
+
+                var date = $("#").val();
+
+                if (membershipType == "month") {
+                    var actionUrl = "getAvailableSlots-process.php?date=" + date;
+                }
+
+
+
+                $.get(actionUrl, function(response) {
+                    if (response == "") {
+                        alert("Successfully Availed");
+                        //                        $('#').modal('toggle');
+                        //                        $('#').modal('toggle');
 
                     } else {
                         alert(response);
@@ -122,7 +146,39 @@
         }
 
     </script>
+        <!--  -=-=-=-=-=-=-=-Anugular=-=-=-=-=-=-=-=-=-=-=- -->
+    <script>
+        var varModule = angular.module("ourModule", []);
+        varModule.controller("ourController", function($scope, $http) {
+            var date= 
+            $scope.jsonArrayWork;
+            $scope.loadWork = function() {
+                var actionUrl="getAvailableSlots-process.php?date=" + date;
+                $http.get("getAvailableSlots-process.php").then(success, failiure);
 
+                function success(response) {
+                    $scope.jsonArrayWork = response.data;
+                    //alert(JSON.stringify(response.data));
+                    $("#taskTable").css("display", "block");
+
+                }
+
+                function failiure(response) {
+                    alert(response.data);
+                }
+            }
+
+            $scope.showTaskManager = function() {
+
+                $("#taskManager").modal("show");
+
+            }
+            $scope.doDel=function(rid){
+                alert(rid);
+            }
+
+        })
+    </script>
 
 </head>
 
@@ -536,6 +592,69 @@
                 </div>
             </div>
         </div>
+        <!--  ====================================================================================================      -->
+        <!--                             Testing                       -->
+        <div id="taskManager" class="modal bg-black fade" role="dialog">
+            <div class="modal-dialog bg-black">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Task Manger
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;</button>
+
+                    </div>
+                    <div class="modal-body ">
+
+
+                        <div id="taskTable" class="display_none" ng-init="loadWork();">
+                            <table width="460" border="1">
+                                <tr bgcolor="">
+                                    <th>Sr.No</th>
+
+                                    <th>Category</th>
+                                    <th>Problem</th>
+
+                                    <th>DOP</th>
+                                    <th>REMOVE</th>
+                                </tr>
+                                <tr ng-repeat="obj in jsonArrayWork">
+                                    <td>
+                                        {{$index+1}}
+                                    </td>
+
+                                    <td>
+                                        {{obj.category}}
+                                    </td>
+                                    <td>
+                                        {{obj.problem}}
+                                    </td>
+
+
+                                    <td>
+                                        {{obj.date}}
+                                    </td>
+                                    <td>
+                                        <input value="Delete" type="button" ng-click="doDel(obj.rid);">
+                                    </td>
+
+                                </tr>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-black " data-dismiss="modal">
+                            Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  ====================================================================================================      -->
+
     </div>
 
 
