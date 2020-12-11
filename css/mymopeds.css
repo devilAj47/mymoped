@@ -110,12 +110,12 @@
 .display_none {
     display: none;
 }
-.text-yellow-hover{
-    color: #ffe473;
+.textYellowHhover{
+    color: #ffe473 !important;
     
     
 }
-.text-yellow-hover:hover {
+.textYellowHover:hover {
   color: white;
     
 }

@@ -47,10 +47,14 @@
 
                 $.get(actionUrl, function(output) {
                     if (output == "") {
-                        $("#Login").modal('toggle');
-                        location.href= "profile_page.php";
-                        
-//                        
+                        if (rno == 'admin') {
+                            $("#Login").modal('toggle');
+                            location.href = "admin.php";
+                        } else {
+                            $("#Login").modal('toggle');
+                            location.href = "profile_page.php";
+                        }
+                        //                        
                     }
 
                 })
@@ -160,8 +164,8 @@
         </div>
 
         <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-<!--             MODALS            -->
-       <!--Successfull Signup Modal -->
+        <!--             MODALS            -->
+        <!--Successfull Signup Modal -->
 
         <div class="modal" tabindex="-1" role="dialog" id="successSignup">
             <div class="modal-dialog" role="document">
@@ -183,7 +187,7 @@
             </div>
         </div>
 
-<!--                          Signup Modal           -->
+        <!--                          Signup Modal           -->
 
         <div class="modal pb-4 pt-4 mt-4" tabindex="-1" role="dialog" id="Signup">
             <div class="modal-dialog">
@@ -306,7 +310,7 @@
     </div>
 
 
-   
+
 
     <!---------------------------------------->
     <div class="container-sm br-yellow bg-black pb-4 pt-4 col-md-4 mt-4 display_none position-absolute z-index_psv  br-black" data-dismiss="modal" id="login_form">
@@ -396,7 +400,7 @@
                     <p class="card-text">
                         You get a total of 15 Bookings
                         Rental Charges Per Hour: 20/- <br>
-                        Per Km Charge: 4.5/- 
+                        Per Km Charge: 4.5/-
                     </p>
                 </div>
             </div>
@@ -458,9 +462,9 @@
 
     </div>
     <!--/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*-->
-    
-    
-    
+
+
+
 </body>
 
 </html>
